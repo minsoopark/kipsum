@@ -22,7 +22,7 @@ $ kipsum {문단 수} {문단의 길이}
 - 문단의 길이 : `short`, `medium`, `long`
 
 
----
+===
 Copyright (c) 2015, Minsoo Park
 
 All rights reserved.
