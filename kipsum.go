@@ -1,4 +1,4 @@
-package kipsum
+package main
 
 import (
     "net/http"
