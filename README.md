@@ -21,6 +21,8 @@ $ kipsum {문단 수} {문단의 길이}
 - 문단 수 : 1~20의 숫자
 - 문단의 길이 : `short`, `medium`, `long`
 
+![스크린샷](https://github.com/minsoopark/kipsum/blob/master/screenshot.png)
+
 
 ===
 Copyright (c) 2015, Minsoo Park
