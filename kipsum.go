@@ -7,6 +7,7 @@ import (
     "strconv"
     "io/ioutil"
     "encoding/json"
+    "strings"
 )
 
 var lengths = []string{"long", "medium", "short"}
@@ -57,5 +58,7 @@ func read(contents string) string {
     if err := json.Unmarshal(byt, &data); err != nil {
         return "Couldn't read from json!"
     }
-    return data["ipsum"].(string)
+    result := data["ipsum"].(string)
+    result = strings.Replace(result, "<br><br>", "\n", -1)
+    return result
 }
