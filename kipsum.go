@@ -2,9 +2,9 @@ package main
 
 import (
     "net/http"
+    "net/url"
     "fmt"
     "os"
-    "strconv"
     "io/ioutil"
     "encoding/json"
     "strings"
@@ -13,21 +13,21 @@ import (
 var lengths = []string{"long", "medium", "short"}
 
 func main() {
-    paragraphs := 3
+    paragraphs := "3"
     length := "medium"
     for i, arg := range os.Args[1:] {
         if i == 0 {
-            if v, err := strconv.Atoi(arg); err == nil {
-                paragraphs = v
-            }
+            paragraphs = arg
         } else if i == 1 {
             if contains(lengths, arg) {
                 length = arg
             }
         }
     }
-    url := fmt.Sprintf("http://hangul.thefron.me/generate.json?paragraphs=%d&length=%s", paragraphs, length)
-    res, err := http.Get(url)
+
+    // New code
+    apiurl := "http://hangul.thefron.me/api/generator"
+    res, err := http.PostForm(apiurl, url.Values{"utf8": {"✓"}, "paragraphs": {paragraphs}, "length": {length}, "text_source_ids[]": {"1"}, "commit": {"생성하기"}})
 
     if err != nil {
         fmt.Println(err)
