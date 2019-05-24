@@ -1,4 +1,5 @@
-#
+#고친 것
+
 [Minsoo Park's kipsum](https://github.com/minsoopark/kipsum)이 바뀌어진 [Thefron](http://thefron.me)님의 [한글입숨](http://hangul.thefron.me/) 에 반응하지 못하여 이를 반응하게 고치었습니다.
 
 -----
